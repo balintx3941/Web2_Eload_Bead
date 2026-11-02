@@ -106,6 +106,20 @@
                 padding: 10px;
             }
         }
+        .add-button {
+            display: inline-block;
+            padding: 11px 18px;
+            margin: 15px 0;
+            background: #2563eb;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            }
+
+.add-button:hover {
+    background: #1d4ed8;
+}
     </style>
 </head>
 
@@ -115,10 +129,19 @@
         <a href="{{ url('/') }}">Főoldal</a>
         <a href="{{ route('kapcsolat.index') }}">Kapcsolat</a>
         <a href="{{ route('gepek.index') }}">Gépek</a>
+        <a href="{{ route('diagram.index') }}">Diagram</a>
     </nav>
 
     <main class="oldal">
         <h1>Gépek</h1>
+        <a href="{{ route('gepek.create') }}" class="add-button">
+            + Új gép felvitele
+        </a>
+        @if (session('siker'))
+            <p style="color: green; text-align: center;">
+                {{ session('siker') }}
+            </p>
+        @endif
         <p class="bevezeto">
             A nyilvántartásban szereplő gépek adatai
         </p>
@@ -137,6 +160,7 @@
                         <th>Processzor</th>
                         <th>Operációs rendszer</th>
                         <th>Darab</th>
+                        <th>Műveletek</th>
                     </tr>
                 </thead>
 
@@ -156,6 +180,26 @@
                             </td>
                             <td>{{ $gep->oprendszer?->nev }}</td>
                             <td>{{ $gep->db }}</td>
+                            
+                            <td>
+                                <a href="{{ route('gepek.edit', $gep->id) }}">
+                                    Szerkesztés
+                                </a>
+
+                                <form action="{{ route('gepek.destroy', $gep->id) }}"
+                                      method="POST"
+                                      style="display: inline;"
+                                      onsubmit="return confirm('Biztosan törölni szeretnéd ezt a gépet?');">
+
+                                    @csrf
+                                    @method('DELETE')
+
+                                    <button type="submit"
+                                            style="background: #dc2626; color: white; padding: 7px 12px; border: none; border-radius: 5px; cursor: pointer;">
+                                        Törlés
+                                    </button>
+                                </form>
+                            </td>
                         </tr>
                     @empty
                         <tr>
