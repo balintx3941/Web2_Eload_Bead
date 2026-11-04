@@ -1,0 +1,50 @@
+{
+    "$schema": "https://www.schemastore.org/package.json",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "build": "vite build",
+        "dev": "vite"
+    },
+    "devDependencies": {
+        "@tailwindcss/vite": "^4.0.0",
+        "concurrently": "^10.0.3",
+        "laravel-vite-plugin": "^3.1",
+        "tailwindcss": "^4.0.0",
+        "vite": "^8.0.0"
+    },
+    "optionalDependencies": {
+        "@laravel/multiplex": "^0.4.1"
+    },
+    "dependencies": {
+        "@vitejs/plugin-react": "^6.1.2",
+        "axios": "^1.21.0",
+        "bcrypt": "^6.0.0",
+        "connect-mongo": "^6.0.0",
+        "dotenv": "^18.0.9",
+        "ejs": "^7.0.2",
+        "express": "^5.3.0",
+        "express-session": "^1.19.0",
+        "mongoose": "^9.11.4",
+        "react": "^19.3.1",
+        "react-dom": "^19.3.1"
+    },
+    "name": "beadando",
+    "version": "1.0.0",
+    "description": "<p align=\"center\"><a href=\"https://laravel.com\" target=\"_blank\"><img src=\"https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg\" width=\"400\" alt=\"Laravel Logo\"></a></p>",
+    "main": "vite.config.js",
+    "directories": {
+        "test": "tests"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/balintx3941/Web2_Eload_Bead.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/balintx3941/Web2_Eload_Bead/issues"
+    },
+    "homepage": "https://github.com/balintx3941/Web2_Eload_Bead#readme"
+}
